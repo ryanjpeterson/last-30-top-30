@@ -1,15 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import Logo from '../../img/logo.png';
 import './Login.css';
 
 function LoginPage() {
-  let loginUrl;
-
-  if (process.env.NODE_ENV === 'development') {
-    loginUrl = `${process.env.REACT_APP_DEVELOPMENT_SERVER_URL}/login`;
-  } else {
-    loginUrl = `${process.env.REACT_APP_PRODUCTION_SERVER_URL}/login`;
-  }
+  const loginUrl = axios.defaults.baseURL + '/login';
 
   return (
     <div className="login">
