@@ -1,0 +1,15 @@
+.user-greeting {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: span 12;
+  margin-top: 1rem;
+  margin-bottom: -2rem;
+}
+
+.user-greeting img {
+  height: 75px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}

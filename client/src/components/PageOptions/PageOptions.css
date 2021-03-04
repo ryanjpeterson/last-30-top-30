@@ -1,0 +1,35 @@
+.page-options {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: span 12;
+  margin-bottom: 1rem;
+}
+
+.page-options__option {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    215deg,
+    #c21987 26%,
+    #d6068d 56%,
+    rgb(172, 36, 226) 85%
+  );
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  min-width: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .page-options {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  .page-options__option {
+    margin-top: 1rem;
+  }
+}

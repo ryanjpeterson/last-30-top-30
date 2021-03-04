@@ -1,0 +1,106 @@
+.track-card {
+  grid-column: span 4;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s;
+  position: relative;
+  border-radius: 15px;
+  min-width: 200px;
+}
+
+.track-card a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.track-card:hover {
+  background: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+.rank {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  z-index: 2;
+}
+
+.track-card__content {
+  display: flex;
+  flex-flow: row nowrap;
+  background: linear-gradient(rgba(18, 18, 18, 0.75) 50%, #000 100%);
+  z-index: 1;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.track-card__cover {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.track-card__cover img {
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.track-card__info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 0 2rem 0 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 0.5rem;
+  overflow: hidden;
+}
+
+.track-card__info--artist {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .track-card {
+    grid-column: span 6;
+  }
+
+  .track-card__cover {
+    height: 150px;
+    width: 150px;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .track-card__info {
+    padding: 0 1rem;
+    margin-left: 0;
+  }
+
+  .track-card__rank {
+    top: 37.5px;
+    left: -40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .track-card {
+    grid-column: span 12;
+  }
+
+  .track-card__content {
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: 1rem;
+    text-align: center;
+  }
+}
