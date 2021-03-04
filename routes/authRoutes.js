@@ -48,7 +48,7 @@ module.exports = (app, spotifyApi) => {
         spotifyApi.setAccessToken(access_token);
       }, (expires_in / 2) * 1000);
 
-      return res.redirect('http://localhost:3000/');
+      return res.redirect(keys.origin);
     } catch (err) {
       res.status(400).json(err);
     }
