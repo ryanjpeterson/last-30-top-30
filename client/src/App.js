@@ -18,9 +18,9 @@ axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers['Access-Control-Allow-Origin'] = 'http://localhost:5000';
 
 if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'https://last-30-top-30.herokuapp.com';
+  axios.defaults.baseURL = 'https://last-30-top-30.netlify.app/';
   axios.defaults.headers['Access-Control-Allow-Origin'] =
-    'https://last-30-top-30.herokuapp.com';
+    'https://last-30-top-30.netlify.app/';
 } else {
   axios.defaults.baseURL = 'http://localhost:5000';
   axios.defaults.headers['Access-Control-Allow-Origin'] =
