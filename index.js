@@ -30,11 +30,6 @@ const spotifyApi = new SpotifyWebApi({
   redirectUri: keys.spotifyRedirectUri,
 });
 
-app.get('/', (req, res) => {
-  console.log(keys);
-  return res.json(process.env);
-});
-
 // Auth routes
 require('./routes/authRoutes')(app, spotifyApi);
 require('./routes/spotifyRoutes')(app, spotifyApi);
