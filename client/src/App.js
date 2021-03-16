@@ -14,15 +14,9 @@ import TopTracksPage from './pages/TopTracks/TopTracks';
 import PlaylistsPreviewPage from './pages/PlaylistsPreview/PlaylistsPreview';
 import UserPlaylistPage from './pages/UserPlaylist/UserPlaylist';
 
-if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'https://last-30-top-30.herokuapp.com';
-  axios.defaults.headers['Access-Control-Allow-Origin'] =
-    'https://last-30-top-30.herokuapp.com';
-} else {
-  axios.defaults.baseURL = 'http://localhost:5000';
-  axios.defaults.headers['Access-Control-Allow-Origin'] =
-    'http://localhost:5000';
-}
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
+axios.defaults.headers['Access-Control-Allow-Origin'] =
+  process.env.REACT_APP_BASE_URL;
 
 function App() {
   const [{ currentUser }, dispatch] = useDataLayerValue();
