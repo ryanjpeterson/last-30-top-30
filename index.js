@@ -1,4 +1,4 @@
-const app = require('express')();
+const express = require('express');
 const cookieParser = require('cookie-parser');
 const SpotifyWebApi = require('spotify-web-api-node');
 const cors = require('cors');
@@ -7,6 +7,8 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 const keys = require('./config/keys');
+
+const app = express();
 
 dotenv.config();
 mongoose.connect(keys.mongoURI);
