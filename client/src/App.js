@@ -17,6 +17,7 @@ import UserPlaylistPage from './pages/UserPlaylist/UserPlaylist';
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 axios.defaults.headers['Access-Control-Allow-Origin'] =
   process.env.REACT_APP_BASE_URL;
+axios.defaults.withCredentials = true;
 
 function App() {
   const [{ currentUser }, dispatch] = useDataLayerValue();

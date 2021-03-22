@@ -36,9 +36,6 @@ module.exports = (app, spotifyApi) => {
       const refresh_token = data.body['refresh_token'];
       const expires_in = data.body['expires_in'];
 
-      spotifyApi.setAccessToken(access_token);
-      spotifyApi.setRefreshToken(refresh_token);
-
       res.cookie('access_token', access_token);
       res.cookie('refresh_token', refresh_token);
 

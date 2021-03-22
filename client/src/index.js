@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import { DataLayer } from "./context/DataLayer";
-import reducer, { initialState } from "./context/reducer";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { DataLayer } from './context/DataLayer';
+import reducer, { initialState } from './context/reducer';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -14,5 +14,5 @@ ReactDOM.render(
       </React.StrictMode>
     </DataLayer>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById('root')
 );

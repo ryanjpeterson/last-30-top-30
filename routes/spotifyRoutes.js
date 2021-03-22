@@ -3,7 +3,7 @@ const Playlist = require('../models/Playlist');
 
 module.exports = (app, spotifyApi) => {
   app.get('/me', async (req, res) => {
-    // spotifyApi.setAccessToken(req.cookies.access_token);
+    spotifyApi.setAccessToken(req.cookies['access_token']);
 
     try {
       const response = await spotifyApi.getMe();
@@ -14,7 +14,7 @@ module.exports = (app, spotifyApi) => {
   });
 
   app.get('/topTracks', async (req, res) => {
-    // spotifyApi.setAccessToken(req.cookies.access_token);
+    spotifyApi.setAccessToken(req.cookies['access_token']);
 
     try {
       const response = await spotifyApi.getMyTopTracks({
@@ -33,7 +33,8 @@ module.exports = (app, spotifyApi) => {
   });
 
   app.post('/createSpotifyPlaylist', async (req, res) => {
-    // spotifyApi.setAccessToken(req.cookies.access_token);
+    spotifyApi.setAccessToken(req.cookies['access_token']);
+
     const { title, tracks } = req.body;
     const trackUris = tracks.map((track) => track.uri);
 
@@ -58,7 +59,8 @@ module.exports = (app, spotifyApi) => {
   });
 
   app.post('/saveExistingPlaylist', async (req, res) => {
-    // spotifyApi.setAccessToken(req.cookies.access_token);
+    spotifyApi.setAccessToken(req.cookies['access_token']);
+
     const { title, trackUris } = req.body;
 
     try {

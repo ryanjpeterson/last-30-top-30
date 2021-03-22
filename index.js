@@ -14,7 +14,6 @@ dotenv.config();
 mongoose.connect(keys.mongoURI);
 
 app.use(bodyParser.json());
-
 app.use(
   cors({
     credentials: true,
