@@ -19,7 +19,7 @@ function SpotifySaveBtn() {
     };
 
     try {
-      const response = await axios.post('/createSpotifyPlaylist', data);
+      const response = await axios.post('/api/createSpotifyPlaylist', data);
       alert(response.data.message);
     } catch (err) {
       alert(err);

@@ -33,7 +33,7 @@ function PlaylistsPreviewPage() {
   }, []);
 
   const getUserPlaylists = async () => {
-    const response = await axios.get('/playlists');
+    const response = await axios.get('/api/playlists');
     return response.data;
   };
 

@@ -28,7 +28,7 @@ function App() {
 
   const getCurrentUser = async () => {
     if (!currentUser) {
-      const user = await axios.get('/me');
+      const user = await axios.get('/api/me');
       dispatch({
         type: 'SET_CURRENT_USER',
         currentUser: user.data.body,

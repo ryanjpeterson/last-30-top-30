@@ -2,7 +2,7 @@ const { formatSpotifyApiResponse } = require('../utils/utils');
 const Playlist = require('../models/Playlist');
 
 module.exports = (app, spotifyApi) => {
-  app.get('/me', async (req, res) => {
+  app.get('/api/me', async (req, res) => {
     spotifyApi.setAccessToken(req.cookies['access_token']);
 
     try {
@@ -13,7 +13,7 @@ module.exports = (app, spotifyApi) => {
     }
   });
 
-  app.get('/topTracks', async (req, res) => {
+  app.get('/api/topTracks', async (req, res) => {
     spotifyApi.setAccessToken(req.cookies['access_token']);
 
     try {
@@ -32,7 +32,7 @@ module.exports = (app, spotifyApi) => {
     }
   });
 
-  app.post('/createSpotifyPlaylist', async (req, res) => {
+  app.post('/api/createSpotifyPlaylist', async (req, res) => {
     spotifyApi.setAccessToken(req.cookies['access_token']);
 
     const { title, tracks } = req.body;
@@ -58,7 +58,7 @@ module.exports = (app, spotifyApi) => {
     }
   });
 
-  app.post('/saveExistingPlaylist', async (req, res) => {
+  app.post('/api/saveExistingPlaylist', async (req, res) => {
     spotifyApi.setAccessToken(req.cookies['access_token']);
 
     const { title, trackUris } = req.body;
@@ -82,7 +82,7 @@ module.exports = (app, spotifyApi) => {
     }
   });
 
-  app.get('/playlists', async (req, res) => {
+  app.get('/api/playlists', async (req, res) => {
     try {
       const userPlaylists = await Playlist.find().sort({ dateAdded: -1 });
       return res.status(200).json(userPlaylists);
@@ -90,7 +90,8 @@ module.exports = (app, spotifyApi) => {
       return res.status(400).json(err);
     }
   });
-  app.post('/savePlaylistToDB', async (req, res) => {
+
+  app.post('/api/savePlaylistToDB', async (req, res) => {
     const { title, user, tracks, trackIds, trackUris, topArtists } = req.body;
 
     if (!user.userProfileImage) {
@@ -126,7 +127,7 @@ module.exports = (app, spotifyApi) => {
     }
   });
 
-  app.get('/playlists/:id', async (req, res) => {
+  app.get('/api/playlists/:id', async (req, res) => {
     const playlistId = req.params.id;
 
     try {

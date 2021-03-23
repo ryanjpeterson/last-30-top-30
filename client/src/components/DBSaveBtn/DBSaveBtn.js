@@ -46,7 +46,7 @@ function DBSaveBtn() {
     };
 
     try {
-      const response = await axios.post('/savePlaylistToDB', data);
+      const response = await axios.post('/api/savePlaylistToDB', data);
       alert(response.data.message);
     } catch (err) {
       alert(err);

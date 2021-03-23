@@ -30,7 +30,7 @@ function TopTracksPage() {
   }, []);
 
   const getTopTracks = async () => {
-    const response = await axios.get('/topTracks');
+    const response = await axios.get('/api/topTracks');
     sessionStorage.setItem('topTracks', JSON.stringify(response.data));
     await dispatch({
       type: 'SET_TOP_TRACKS',

@@ -19,7 +19,7 @@ function UserPlaylistPage({ playlistId }) {
   }, []);
 
   const fetchPlaylist = async () => {
-    const playlist = await axios.get(`/playlists/${playlistId}`);
+    const playlist = await axios.get(`/api/playlists/${playlistId}`);
 
     await dispatch({
       type: 'SET_CURRENT_PLAYLIST',

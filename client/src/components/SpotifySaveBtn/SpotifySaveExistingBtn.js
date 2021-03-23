@@ -12,7 +12,7 @@ function SpotifySaveExistingBtn() {
     };
 
     try {
-      const response = await axios.post('/saveExistingPlaylist', data);
+      const response = await axios.post('/api/saveExistingPlaylist', data);
       alert(response.data.message);
     } catch (err) {
       alert(err);
